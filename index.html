@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueWave Maritime Shipping Agency</title>
+    <style>
+        body {
+            background-color: lightseagreen;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1, h2 {
+            color: white;
+        }
+        .status {
+            margin-top: 20px;
+            background-color: grey;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .keynote {
+            color: #00CED1; /* Sea blue color */
+            font-weight: bold;
+        }
+        .bullet-separator {
+            color: #00CED1; /* Sea blue color */
+            margin: 0; /* No margin */
+            font-size: 20px;
+            display: inline-block;
+            text-align: left; /* Align bullets to the left */
+        }
+        .stage {
+            color: lightblue;
+            margin-bottom: 10px;
+            text-align: left; /* Align text to the left */
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .home-button {
+            margin-top: 20px;
+            background-color: lightseagreen;
+            color: black;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 12px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BlueWave Maritime Shipping Agency</h1>
+        <h2>Enter your tracking number</h2>
+        <input type="text" id="trackingNumber" placeholder="Enter tracking number">
+        <br>
+        <button onclick="trackShipment()">Track</button>
+
+        <div id="trackingDetails" class="status" style="display:none;">
+            <h2 class="keynote">🚚 Delivery Status</h2>
+            <p>International item being forwarded to destination country 🇨🇦</p>
+
+            <h2 class="keynote">Expected delivery</h2>
+            <p>当 November 8, 2024</p>
+
+            <h2 class="keynote">Last Updated</h2>
+            <p>Today at 6:17 pm</p>
+
+            <h2 class="keynote">Tracking Number</h2>
+            <p>IVANADDYHHRZDGHBIG</p>
+
+            <h2 class="keynote">Name on Package</h2>
+            <p>Efrén Gómez Abreu</p>
+
+            <h2 class="keynote">Delivery Address</h2>
+            <p>🚚 5320 Av Bourret #307, Montréal, QC H3X 1H9, Canada</p>
+
+            <h2 class="keynote">Tracking History</h2>
+
+            <div class="stage">
+                ✅ Arrived at Gnassingbé Eyadéma International Airport, Lome, Togo 🛬<br>
+                October 23, 2024<br>
+                <div class="bullet-separator">•<br>•<br>•</div>
+            </div>
+            <div class="stage">
+                ✅ Departing Gnassingbé Eyadéma International Airport, Lome, Togo 🛬<br>
+                November 1, 2024<br>
+                <div class="bullet-separator">•<br>•<br>•</div>
+            </div>
+            <div class="stage">
+                ✅ En Route to Yul Montreal-Trudeau International Airport Canada for distribution 🛬<br>
+                November 4, 2024<br>
+                <div class="bullet-separator">•<br>•<br>•</div>
+            </div>
+            <div class="stage">
+                🚫 Arrived at Yul Montreal-Trudeau International Airport, Canada 🛬<br>
+                N/A<br>
+                <div class="bullet-separator">•<br>•<br>•</div>
+            </div>
+            <div class="stage">
+                🚫 Out for Delivery<br>
+                N/A<br>
+                <div class="bullet-separator">•<br>•<br>•</div>
+            </div>
+            <div class="stage">
+                🚫 Delivered<br>
+                N/A
+            </div>
+
+            <button class="home-button" onclick="goHome()">Home</button>
+
+            <p class="copyright">© 2024 BlueWave Maritime Shipping Agency. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function trackShipment() {
+            const trackingNumber = document.getElementById("trackingNumber").value;
+            const trackingDetails = document.getElementById("trackingDetails");
+
+            if (trackingNumber === "IVANADDYHHRZDGHBIG") {
+                trackingDetails.style.display = "block";
+            } else {
+                alert("Invalid tracking number. Please try again.");
+            }
+        }
+
+        function goHome() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
